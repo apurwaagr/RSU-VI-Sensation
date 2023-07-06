@@ -46,7 +46,7 @@ class Sensation:
         elif "say hi to" in command.lower():
             name = command.lower().split("say hi to")[1].strip()
             self.say_hello(name)
-        elif command.lower() == "stop sensation":
+        elif command.lower() == "stop sensation" or command.lower() == "close sensation":
             self.stop_sensation()
         elif command.lower() == "shut down sensation":
             self.shutdown()
@@ -54,7 +54,7 @@ class Sensation:
             self.print_and_speak("Invalid command.")
 
     def handle_inactive_sensation(self, command):
-        if command.lower() == "start sensation":
+        if "start" in command.lower() or "hello" in command.lower() or ("sensation" in command.lower() and command.lower() != "shut down sensation" and command.lower()!= "stop sensation"):
             if not self.sensation_active:
                 self.start_sensation()
             else:
