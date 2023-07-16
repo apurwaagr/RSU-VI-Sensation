@@ -7,7 +7,10 @@ Pre-Requisites:
 2. Latest version of pip / conda
 3. Latest version of PyTorch
 
-Python installations refernce(Please install these manually in case the requirements.txt file does't work:
+Python installations reference(Please install these manually in case the requirements.txt file does't work: 
+
+(Note: Please do all the installations using sudo - as is it is required to manage the system reboot part.)
+
 1. pip install portaudio
 2. pip install numpy
 3. pip install torch

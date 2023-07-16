@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import speech_recognition as sr
 import pyttsx3
