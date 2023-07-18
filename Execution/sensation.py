@@ -76,13 +76,14 @@ class Sensation:
         if "start" in command.lower() or "hello" in command.lower() or ("sensation" in command.lower() and command.lower() != "shut down sensation" and command.lower()!= "stop sensation"):
             if not self.sensation_active:
                 handleStart.start_sensation(self)
+                self.take_picture_already_processed = False
+                self.current_position_already_processed = False
             else:
                 print_and_speak("Sensation is already active.")
         elif command.lower() == "shut down sensation":
             handleShutdown.shutdown(self)
         else:
             print_and_speak("Sensation is not active. Start Sensation to proceed.")
-
 
 
 
