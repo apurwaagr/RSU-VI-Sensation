@@ -22,7 +22,7 @@ class Sensation:
         self.sensation_active = False
 
     def start(self):
-        print_and_speak("Welcome to Sensation. You can start speaking now.")
+        print_and_speak("Welcome to Sensation. Please start sensation.")
 
         while True:
             try:
