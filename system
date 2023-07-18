@@ -1,0 +1,15 @@
+[Unit]
+Description=Run Sensation on Startup
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 $PATH/rsu-vi-sensation-main/Execution/sensation.py
+User=$USER
+Group=$(id -gn)
+Restart=on-failure
+RestartSec=5s
+StartLimitInterval=0
+StartLimitBurst=0
+
+[Install]
+WantedBy=multi-user.target
