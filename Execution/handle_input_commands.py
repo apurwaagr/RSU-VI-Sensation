@@ -6,8 +6,8 @@ import handle_Stop
 import handle_Sensation_Start
 from handle_Print_and_Speak import print_and_speak
 import handle_Inactive_Sensation
-import handle_Navigation_Start
-import handle_Navigation_Stop
+import handle_Navigation
+import handle_Navigation
 
 def process_command(self, command):
     if "what" in command.lower() and "time" in command.lower():
@@ -19,12 +19,12 @@ def process_command(self, command):
 
     elif command.lower() == "start navigation":
         if self.navigation_already_processed is False:
-            handle_Navigation_Start.start_navigation(self)
+            handle_Navigation.start_navigation(self)
         else:
             print_and_speak("Current Position command is already processed. Skipping this command")
 
     elif command.lower() == "stop navigation":
-        handle_Navigation_Stop.stop_navigation(self)
+        handle_Navigation.stop_navigation(self)
 
     elif "picture" in command.lower() or "photo" in command.lower():
         if self.take_picture_already_processed is False:
