@@ -17,7 +17,7 @@ def process_command(self, command):
         handle_Location.get_current_position(self)
         
 
-    elif command.lower() == "start navigation":
+    elif command.lower() != "stop navigation" and "navigation" in command.lower():
         if self.navigation_already_processed is False:
             handle_Navigation.start_navigation(self)
         else:
@@ -32,10 +32,6 @@ def process_command(self, command):
             handle_Picture.take_picture(self)
         else:
             print_and_speak("Take picture command is already processed. Skipping this command")
-
-    elif "say hi to" in command.lower():
-        name = command.lower().split("say hi to")[1].strip()
-        self.say_hello(name)
 
     elif command.lower() == "stop sensation" or command.lower() == "close sensation":
         handle_Stop.stop_sensation(self)
