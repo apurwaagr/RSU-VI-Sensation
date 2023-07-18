@@ -20,6 +20,8 @@ class Sensation:
         self.engine = pyttsx3.init()
         self.engine.setProperty("rate", 150)
         self.sensation_active = False
+        self.take_picture_already_processed = False
+        self.current_position_already_processed = False
 
     def start(self):
         print_and_speak("Welcome to Sensation. Please start sensation.")
@@ -49,9 +51,17 @@ class Sensation:
         if "what" in command.lower() and "time" in command.lower():
             handleTime.get_current_time(self)
         elif "position" in command.lower() or "location" in command.lower():
-            handleLocation.get_current_position(self)
+            if self.current_position_already_processed is False:
+                self.current_position_already_processed = True
+                handleLocation.get_current_position(self)
+            else:
+                print_and_speak("Current Position command is already processed. Skipping this command")
         elif "picture" in command.lower() or "photo" in command.lower():
-            handlePicture.take_picture(self)
+            if self.take_picture_already_processed is False:
+                self.take_picture_already_processed = True
+                handlePicture.take_picture(self)
+            else:
+                print_and_speak("Take picture command is already processed. Skipping this command")
         elif "say hi to" in command.lower():
             name = command.lower().split("say hi to")[1].strip()
             self.say_hello(name)
