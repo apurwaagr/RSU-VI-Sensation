@@ -3,7 +3,7 @@ import handle_Shutdown
 import handle_Sensation_Start
 
 def handle_inactive_sensation(self, command):
-    if "start" in command.lower() or "hello" in command.lower() or ("sensation" in command.lower() and command.lower() != "shut down sensation" and command.lower()!= "stop sensation"):
+    if "start" in command.lower() or "hello" in command.lower() or ("sensation" in command.lower() and "down" not in command.lower() and command.lower()!= "stop sensation"):
         if not self.sensation_active:
             handle_Sensation_Start.start_sensation(self)
             self.take_picture_already_processed = False

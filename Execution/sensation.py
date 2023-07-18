@@ -15,8 +15,8 @@ class Sensation:
         self.engine = pyttsx3.init()
         self.engine.setProperty("rate", 150)
         self.sensation_active = False
-        self.take_picture_already_processed = False
-        self.navigation_already_processed = False
+        #self.take_picture_already_processed = False
+        #self.navigation_already_processed = False
 
     # to start asr file but doesnt start sensation
     def start(self):
