@@ -1,5 +1,11 @@
 #RSU-VI Sensation
 
+
+Step 1: refer guide file to create service file
+Step 2: run ./sh file 
+Step 3: if you see any error, resolve dependencies using below steps (pip install) 
+Step 4: incase you want to run the implementation manually - <code>
+
 Please run the requirement.txt to install all required python packages:
 pip install -r requirements.txt
 
