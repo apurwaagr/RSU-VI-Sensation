@@ -1,16 +1,19 @@
 #RSU-VI Sensation
 
 
-Step 1: refer guide file to create service file
+Step 1: Refer the ManageBootGuide file (inside the Reboot and startup directory) to create service file 
 
 Step 2: run ./sh file 
 
 Step 3: if you see any error, resolve dependencies using below steps (pip install) 
 
-Step 4: incase you want to run the implementation manually - <code>
+Step 4(Optional): incase you want to install dependencies manually 
 
 Please run the requirement.txt to install all required python packages:
 pip install -r requirements.txt
+
+
+Step 5(optional): incase you want to run the implementation manually 
 
 Pre-Requisites:
 1. Latest version of python
