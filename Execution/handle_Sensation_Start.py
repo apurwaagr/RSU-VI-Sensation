@@ -10,7 +10,8 @@ def start_loop(self):
             with sr.Microphone() as source:
                 self.r.adjust_for_ambient_noise(source)
                 audio = self.r.listen(source, timeout=5)
-                result = self.r.recognize_whisper(audio, model="medium.en")
+                #result = self.r.recognize_whisper(audio, model="medium.en")
+                result = self.r.recognize_google(audio)
                 print_and_speak("You said: " + result)
 
                 if self.sensation_active:
@@ -29,4 +30,5 @@ def start_sensation(self):
     self.sensation_active = True
     self.take_picture_already_processed = False
     self.navigation_already_processed = False
+    self.camera_already_processed = False
     print_and_speak("Sensation started.")
