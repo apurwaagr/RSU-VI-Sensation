@@ -21,7 +21,7 @@ def process_command(self, command):
         if self.navigation_already_processed is False:
             handle_Navigation.start_navigation(self)
         else:
-            print_and_speak("Current Position command is already processed")
+            print_and_speak("Navigation application is already running in background")
 
     elif command.lower() == "stop navigation":
         handle_Navigation.stop_navigation(self)
@@ -31,7 +31,7 @@ def process_command(self, command):
             self.take_picture_already_processed = True
             handle_Picture.take_picture(self)
         else:
-            print_and_speak("Take picture command is already processed")
+            print_and_speak("Picture is already captured. Camera running in background")
 
     elif command.lower() == "stop sensation" or command.lower() == "close sensation":
         handle_Stop.stop_sensation(self)
