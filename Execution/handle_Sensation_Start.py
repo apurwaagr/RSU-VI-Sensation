@@ -10,7 +10,7 @@ def start_loop(self):
             with sr.Microphone() as source:
                 self.r.adjust_for_ambient_noise(source)
                 audio = self.r.listen(source, timeout=5)
-                result = self.r.recognize_google(audio)
+                result = self.r.recognize_whisper(audio, model="medium.en")
                 print_and_speak("You said: " + result)
 
                 if self.sensation_active:
