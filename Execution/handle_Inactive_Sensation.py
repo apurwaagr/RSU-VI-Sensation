@@ -8,6 +8,7 @@ def handle_inactive_sensation(self, command):
             handle_Sensation_Start.start_sensation(self)
             self.take_picture_already_processed = False
             self.current_position_already_processed = False
+            self.camera_already_processed = False
         else:
             print_and_speak("Sensation is already active.")
     elif command.lower() == "shut down sensation":
